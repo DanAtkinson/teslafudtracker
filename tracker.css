@@ -1,0 +1,42 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.vin-header {
+
+
+    height: 340px;
+    white-space: nowrap;
+    z-index: -10;
+    position: absolute;
+    background-color: #f3f3f3;
+    -webkit-animation: slide 30s forwards;
+    left: 90%;
+    transform: translateX(-50%) scale(1);
+    border: solid 2px #f1f1f1;
+    font-family: monospace;
+    font-size: 56px;
+    line-height: 60px;
+    letter-spacing: 3px;
+    padding: 14px 50px;
+    background: #f3f3f3;
+    color: #f3f3f3;
+    text-shadow: 2px 5px 10px rgba(158,158,158,0.5), 0px -5px 27px rgba(197,197,197,0.85), 5px -5px 2px #fff;
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+.green-text {
+    font-weight: 400;
+    font-size: 40px;
+    color: #2dcb93;
+    margin: 0;
+    line-height: 1.0;
+}
