@@ -24,7 +24,7 @@ fileData = IO.read("data.json")
 jsonData = JSON.parse(fileData)
 
 definitelyTesla = /[Tt]esla|[Mm]usk|[Ee]lon/
-fudwords = / desperate | rattle| worried |in trouble| fear| scare | (doom|doomed) |bankrupt|lose money|losing (faith|confidence)|(growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
+fudwords = / desperate | rattle| worried |in trouble| fear| scare |total fraud|grueling|alleg(ing|ed)|([Ff]ormer|[Ee]x[- ])[Tt]esla| (doom|doomed) |bankrupt|lose money|losing (faith|confidence)|(growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
 negate = //
 
 scanDate = DateTime.now.to_date.to_s
@@ -65,6 +65,7 @@ end
 
 #Remove blank entries
 fudAuthorCount.delete(nil)
+fudAuthorCount.delete("")
 fudSourceCount.delete(nil)
 
 #Remove newsapi mistakes
