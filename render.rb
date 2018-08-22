@@ -24,7 +24,7 @@ fileData = IO.read("data.json")
 jsonData = JSON.parse(fileData)
 
 definitelyTesla = /[Tt]esla|[Mm]usk|[Ee]lon/
-fudwords = /desperate|rattled|trouble|fear|scare|doom|bankrupt|losing faith|concerns|xperts doubt/
+fudwords = / desperate | rattle| worried |in trouble| fear| scare | (doom|doomed) |bankrupt|losing (faith|confidence)|(growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
 negate = //
 
 scanDate = DateTime.now.to_date.to_s
@@ -32,7 +32,7 @@ scanDate = DateTime.now.to_date.to_s
 jsonData.each do |entry|
   if (entry["description"]  =~ fudwords || entry["title"]  =~ fudwords) && (entry["description"]  =~ definitelyTesla || entry["title"] =~ definitelyTesla)
 
-    #Negate 
+    #Negate
     #if (entry["description"]  =~ negate || entry["title"]  =~ negate)
     #  next
     #end
@@ -68,7 +68,7 @@ fudAuthorCount.delete(nil)
 fudSourceCount.delete(nil)
 
 #Remove newsapi mistakes
-notAuthors = ["feedfeeder","Reuters","http://www.dailymail.co.uk/home/search.html?s=&authornamef=Reuters","Bloomberg","The Associated Press","Staff reports","ABC News","newsfeeds@nzherald.co.nz"]
+notAuthors = ["feedfeeder","Reuters","http://www.dailymail.co.uk/home/search.html?s=&authornamef=Reuters","Reuters Editorial","Bloomberg","The Associated Press","Staff reports","ABC News","newsfeeds@nzherald.co.nz","RT"]
 notAuthors.each do |na|
   fudAuthorCount.delete(na)
 end
