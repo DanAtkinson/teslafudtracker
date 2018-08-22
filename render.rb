@@ -24,8 +24,8 @@ fileData = IO.read("data.json")
 jsonData = JSON.parse(fileData)
 
 definitelyTesla = /[Tt]esla|[Mm]usk|[Ee]lon/
-fudwords = / desperate | rattle| worried |in trouble| fear| scare |total fraud|grueling|alleg(ing|ed)|([Ff]ormer|[Ee]x[- ])[Tt]esla| (doom|doomed) |bankrupt|lose money|losing (faith|confidence)|(growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
-negate = //
+fudwords = / desperate | rattle| worried |in trouble| fear| scare |total fraud|grueling|([Ff]ormer|[Ee]x[- ])[Tt]esla| (doom|doomed) |bankrupt|lose money|losing (faith|confidence)|(growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
+negate = /([Hh]ire|[Hh]iring)|brings on|little to fear/
 
 scanDate = DateTime.now.to_date.to_s
 
@@ -33,9 +33,9 @@ jsonData.each do |entry|
   if (entry["description"]  =~ fudwords || entry["title"]  =~ fudwords) && (entry["description"]  =~ definitelyTesla || entry["title"] =~ definitelyTesla)
 
     #Negate
-    #if (entry["description"]  =~ negate || entry["title"]  =~ negate)
-    #  next
-    #end
+    if (entry["description"]  =~ negate || entry["title"]  =~ negate)
+      next
+    end
 
     puts "FUD from #{entry["source"]} - #{entry["author"]} - #{entry["title"]} : #{entry["url"]} \n #{entry["description"]}\n\n".red
 
@@ -69,7 +69,7 @@ fudAuthorCount.delete("")
 fudSourceCount.delete(nil)
 
 #Remove newsapi mistakes
-notAuthors = ["feedfeeder","Reuters","http://www.dailymail.co.uk/home/search.html?s=&authornamef=Reuters","Reuters Editorial","Bloomberg","The Associated Press","Staff reports","ABC News","newsfeeds@nzherald.co.nz","RT"]
+notAuthors = ["feedfeeder","The Washington Post, The Washington Post","Reuters","http://www.dailymail.co.uk/home/search.html?s=&authornamef=Reuters","Reuters Editorial","Bloomberg","The Associated Press","Staff reports","ABC News","newsfeeds@nzherald.co.nz","RT"]
 notAuthors.each do |na|
   fudAuthorCount.delete(na)
 end
