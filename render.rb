@@ -49,7 +49,8 @@ jsonData.each do |entry|
     #FUD articles per day
     @fudDates = chalkUp(@fudDates, entryDate)
 
-    @articles.push("#{entryDate} #{entry["source"]} - #{entry["title"]}")
+
+    @articles.push(entry)
 
   else
     puts "NOT  #{entry["source"]} - #{entry["author"]} - #{entry["title"]} : #{entry["url"]} \n #{entry["description"]}\n\n".green

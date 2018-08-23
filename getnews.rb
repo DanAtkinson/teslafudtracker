@@ -25,7 +25,7 @@ begin
           unless duplicateCheck.include?(sourceAndTitle)
             puts sourceAndTitle
             duplicateCheck.add(sourceAndTitle)
-            @articles.push({"source" => entry.name,"author" => entry.author , "title" => entry.title, "url" => entry.url, "description" => entry.description, "publishedAt" => entry.publishedAt })
+            @articles.push({"source" => entry.name,"author" => entry.author , "title" => entry.title, "url" => entry.url, "description" => entry.description, "publishedAt" => entry.publishedAt, "urlToImage" => entry.urlToImage })
             entryDate = Date.parse(entry.publishedAt).to_s
           end
       end
