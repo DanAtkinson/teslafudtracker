@@ -163,7 +163,7 @@
                             <img class="mr-3" src="burn.jpg" alt="Image" height="100" width="150">
                           <%end%>
                           <div class="media-body">
-                            <h5 class="mt-0"><%="#{Date.parse(entry["publishedAt"]).to_s} - #{entry["source"]} -  #{entry["title"]}"%></h5>
+                            <h5 class="mt-0"><%="#{entry["publishedAt"]} - #{entry["source"]} -  #{entry["title"]}"%></h5>
                               <%=entry["description"]%>
                           </div>
                         </div>
