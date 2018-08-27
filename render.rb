@@ -24,8 +24,8 @@ fileData = IO.read("data.json")
 jsonData = JSON.parse(fileData)
 
 definitelyTesla = /[Tt]esla|[Mm]usk|[Ee]lon/
-fudwords = / desperate | rattle| worried |in trouble|[Cc]louds [Gg]ather| fear| drugs | scare |poorly built|[Ss]uppliers.*[Rr]isk|[Dd]elivered with [Ff]laws|total fraud|grueling|([Ff]ormer|[Ee]x[- ])[Tt]esla| (doom|doomed) |bankrupt|cash (problem|crunch)|Tesla insider|lose money|losing (faith|confidence)|(growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
-negate = /([Hh]ire|[Hh]iring)|brings on|little to fear|memes/
+fudwords = / desperate | rattle| worried |([Bb]ig|in) [Tt]rouble|[Cc]louds [Gg]ather| fear| drugs | scare |poorly built|[Ss]uppliers.*[Rr]isk|[Dd]elivered with [Ff]laws|total fraud|grueling|([Ff]ormer|[Ee]x[- ])[Tt]esla| (doom|doomed) |bankrupt|cash (problem|crunch)|Tesla insider|lose money|losing (faith|confidence)|(growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
+negate = /([Hh]ire|[Hh]iring)|brings on|little to fear|memes|the press/
 
 scanDate = DateTime.now.to_date.to_s
 
