@@ -156,7 +156,7 @@
                       <td>
                         <div class="media">
                           <% unless entry["urlToImage"].nil? %>
-                            <img class="mr-3" src="<%=entry["urlToImage"]%>" alt="Image" height="100" width="150">
+                            <img class="mr-3" src="<%="#{entry["urlToImage"]}".gsub('http:','https:')%>" alt="Image" height="100" width="150">
                           <%else%>
                             <img class="mr-3" src="burn.jpg" alt="Image" height="100" width="150">
                           <%end%>

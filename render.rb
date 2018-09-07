@@ -51,7 +51,6 @@ jsonData.each do |entry|
     #FUD articles per day
     @fudDates = chalkUp(@fudDates, entryDate)
 
-
     @articles.push(entry)
 
   else
