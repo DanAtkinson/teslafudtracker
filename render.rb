@@ -71,7 +71,7 @@ fudAuthorCount.delete("")
 fudSourceCount.delete(nil)
 
 #Remove newsapi mistakes
-notAuthors = ["feedfeeder","The Washington Post, The Washington Post","Reuters","http://www.dailymail.co.uk/home/search.html?s=&authornamef=Reuters","Reuters Editorial","Bloomberg","The Associated Press","Staff reports","ABC News","newsfeeds@nzherald.co.nz","RT"]
+notAuthors = ["feedfeeder","The Washington Post, The Washington Post","Reuters","https://www.facebook.com/DailyMail","http://www.dailymail.co.uk/home/search.html?s=&authornamef=Reuters","Reuters Editorial","Bloomberg","The Associated Press","Staff reports","ABC News","newsfeeds@nzherald.co.nz","RT"]
 notAuthors.each do |na|
   fudAuthorCount.delete(na)
 end
