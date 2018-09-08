@@ -24,8 +24,8 @@ fileData = IO.read("data.json")
 jsonData = JSON.parse(fileData)
 
 definitelyTesla = /[Tt]esla|[Mm]usk|[Ee]lon/
-fudwords = / desperate | rattle | fiasco |big problems| sues Tesla| harm|erratic|smoking (weed|pot|marijuana)|[En]ron|mental health|[Bb]lack[Rr]ock|([Bb]ig|in) [Tt]rouble|[Cc]louds [Gg]ather| fear| drugs |(little|no) chance of success| scare |poorly (built|engineered)|[Ss]uppliers.*[Rr]isk|[Dd]elivered with [Ff]laws|total fraud|grueling|([Ff]ormer |ex-|42 )employee|([Ff]ormer|[Ee]x[- ])[Tt]esla| (doom|doomed) |bankrupt|[pP]roblems [rR]aising [Cc]apital|cash (problem|crunch)|Tesla insider|lose money|losing (faith|confidence)|(serious|growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling/
-negate = /([Hh]ire|[Hh]iring)|brings on|little to fear|memes|the press|Didi|saboteur|fear not|green energy/
+fudwords = / desperate | rattle | fiasco |big problems| sues Tesla| harm|erratic|smoking (weed|pot|marijuana)|[En]ron|mental health|[Bb]lack[Rr]ock|([Bb]ig|in) [Tt]rouble|[Cc]louds [Gg]ather| fear| drugs |(little|no) chance of success| scare |poorly (built|engineered)|[Ss]uppliers.*[Rr]isk|[Dd]elivered with [Ff]laws|total fraud|grueling|([Ff]ormer |ex-|42 )employee|([Ff]ormer|[Ee]x[- ])[Tt]esla| (doom|doomed) |bankrupt|[pP]roblems [rR]aising [Cc]apital|cash (problem|crunch)|Tesla insider|lose money|losing (faith|confidence)|(serious|growing|raising|raised) concerns|xperts doubt|nalysts warn|scrambling|Air Force/
+negate = /([Hh]ire|[Hh]iring)|brings on|little to fear|memes|the press|Didi|saboteur|fear not|green energy|inaccurate|matters?/
 
 scanDate = DateTime.now.to_date.to_s
 
